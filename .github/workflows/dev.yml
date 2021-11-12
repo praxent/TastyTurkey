@@ -2,10 +2,10 @@ name: Deploy app to gh pages
 on:
   push:
     branches:
-      - main
+      - dev
   pull_request:
     branches:
-      - main
+      - dev
 jobs:
   build_react:
     runs-on: ubuntu-latest
