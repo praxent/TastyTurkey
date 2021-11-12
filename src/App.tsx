@@ -16,8 +16,8 @@ function App() {
       <StyledAppBar />
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
+        <Button onClick={handleOpen} text="Add Recipe" />
       </header>
-      <Button onClick={handleOpen} text="Add Recipe" />
       <FormModal open={modalOpen} handleClose={() => setModalOpen(false)}>
         <Form />
       </FormModal>
