@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/TastyTurkey/static/css/main.17ab92ed.chunk.css",
+    "main.js": "/TastyTurkey/static/js/main.f6a65652.chunk.js",
+    "main.js.map": "/TastyTurkey/static/js/main.f6a65652.chunk.js.map",
+    "runtime-main.js": "/TastyTurkey/static/js/runtime-main.8199abf5.js",
+    "runtime-main.js.map": "/TastyTurkey/static/js/runtime-main.8199abf5.js.map",
+    "static/js/2.73df2152.chunk.js": "/TastyTurkey/static/js/2.73df2152.chunk.js",
+    "static/js/2.73df2152.chunk.js.map": "/TastyTurkey/static/js/2.73df2152.chunk.js.map",
+    "static/js/3.c8cde692.chunk.js": "/TastyTurkey/static/js/3.c8cde692.chunk.js",
+    "static/js/3.c8cde692.chunk.js.map": "/TastyTurkey/static/js/3.c8cde692.chunk.js.map",
+    "index.html": "/TastyTurkey/index.html",
+    "static/css/main.17ab92ed.chunk.css.map": "/TastyTurkey/static/css/main.17ab92ed.chunk.css.map",
+    "static/js/2.73df2152.chunk.js.LICENSE.txt": "/TastyTurkey/static/js/2.73df2152.chunk.js.LICENSE.txt",
+    "static/media/logo_turkey.6bb90455.png": "/TastyTurkey/static/media/logo_turkey.6bb90455.png",
+    "static/media/text_restaurant_name.2ac26f01.png": "/TastyTurkey/static/media/text_restaurant_name.2ac26f01.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.8199abf5.js",
+    "static/js/2.73df2152.chunk.js",
+    "static/css/main.17ab92ed.chunk.css",
+    "static/js/main.f6a65652.chunk.js"
+  ]
+}
