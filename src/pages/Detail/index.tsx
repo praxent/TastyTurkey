@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import api from '../../api'
 import { DetailCard } from '../../components/DetailCard'
+import { Recipe } from '../../models'
 
 const getRecipes = async () => {
   try {
@@ -16,8 +17,8 @@ const getRecipes = async () => {
 }
 
 export const Detail = () => {
-  const [selectedRecipe, setSelectedRecipe] = useState<null | any>(null)
-  const [recipes, setRecipes] = useState([])
+  const [selectedRecipe, setSelectedRecipe] = useState<null | Recipe>(null)
+  const [recipes, setRecipes] = useState<[] | Recipe[]>([])
   useEffect(() => {
     async function fetchRecipes() {
       setRecipes(await getRecipes())
@@ -31,7 +32,7 @@ export const Detail = () => {
       <h1>Detail page</h1>
 
       <div className="recipes-wrapper">
-        {recipes.map((recipe: any) => (
+        {recipes.map((recipe: Recipe) => (
           <div className="recipe-row">
             <h3>{recipe.title}</h3>
             <Button onClick={() => setSelectedRecipe(recipe)}>View Recipe</Button>

@@ -1,5 +1,3 @@
-// const defaultContentType = 'application/json'
-
 type Props = {
   path: string
   method: string
