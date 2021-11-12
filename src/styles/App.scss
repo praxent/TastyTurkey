@@ -18,7 +18,18 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+#background-gradient {
+  background: #ff9966;
+  background: -webkit-linear-gradient(to bottom, #ff5e62, #ff9966); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to bottom,
+    #ff5e62,
+    #ff9966
+  );
+  min-height: 100vh;
+
+  h1, h3, p {
+    margin: 0;
+  }
 }
 
