@@ -5,7 +5,7 @@ type Props = {
 }
 
 export default async (payload: Props) => {
-  const base = 'http://localhost:5000'
+  const base = 'https://tasty-turkey.herokuapp.com'
   const { path, method, body } = payload
 
   const url = `${base}/${path}`
