@@ -1,20 +1,21 @@
 import { Button } from '@mui/material'
 import React from 'react'
-
 import logo from '../../styles/assets/logo_turkey.png'
 import './styles.scss'
 
 interface Props {
   title: string
   ingredients: string[]
-  instructions: string[]
-  setSelectedRecipe: React.Dispatch<React.SetStateAction<number | null>>
+  temp: number
+  time: number
+  setSelectedRecipe: React.Dispatch<React.SetStateAction<any | null>>
 }
 
 export const DetailCard: React.FC<Props> = ({
   title,
   ingredients,
-  instructions,
+  temp,
+  time,
   setSelectedRecipe,
 }) => {
   return (
@@ -33,9 +34,8 @@ export const DetailCard: React.FC<Props> = ({
         </ul>
         <h3>Instructions</h3>
         <ol>
-          {instructions.map((instruction) => (
-            <li key={Math.random()}>{instruction}</li>
-          ))}
+          <li key={Math.random()}>Temp: {temp}</li>
+          <li key={Math.random()}>Time: {time}</li>
         </ol>
       </div>
 

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { FormControl, InputLabel, Input } from '@mui/material'
-
+import api from '../../api'
 import Button from '../Button'
 
 const Form: React.FC = () => {
@@ -22,8 +22,21 @@ const Form: React.FC = () => {
     setIngredients(e.target.value)
   }
 
-  const handleSubmit = (): void => {
-    console.log('submit')
+  const handleSubmit = async () => {
+    try {
+      return await api({
+        path: 'Recipes',
+        method: 'POST',
+        body: {
+          title,
+          temp: parseInt(temp, 10),
+          time: parseInt(time, 10),
+          ingredients: ingredients.split(', '),
+        },
+      })
+    } catch {
+      throw Error
+    }
   }
 
   return (
@@ -76,7 +89,7 @@ const Form: React.FC = () => {
         </FormControl>
       </div>
       <div style={{ marginLeft: 50, marginTop: 30 }}>
-        <Button onClick={handleSubmit} text="Submit" />
+        <Button onClick={() => handleSubmit()} text="Submit" />
       </div>
     </>
   )

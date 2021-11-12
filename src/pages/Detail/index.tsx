@@ -1,42 +1,49 @@
 import { Button } from '@mui/material'
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-
+import api from '../../api'
 import { DetailCard } from '../../components/DetailCard'
 
-const MOCK_INGREDIENTS = [
-  '20-Pound turkey',
-  '1 Onion',
-  '1 Lemon',
-  '1 Apple',
-  '.75 ounce container fresh rosemary ',
-  '.75 ounce container fresh thyme ',
-  '.75 ounce container fresh sage ',
-]
-
-const MOCK_INSTRUCTIONS = ['Buy turkey', 'Mix ingredients', 'Make sure it is perfect!']
+const getRecipes = async () => {
+  try {
+    return await api({
+      path: 'Recipes',
+      method: 'GET',
+    })
+  } catch {
+    throw Error
+  }
+}
 
 export const Detail = () => {
-  const [selectedRecipe, setSelectedRecipe] = useState<null | number>(null)
+  const [selectedRecipe, setSelectedRecipe] = useState<null | any>(null)
+  const [recipes, setRecipes] = useState([])
+  useEffect(() => {
+    async function fetchRecipes() {
+      setRecipes(await getRecipes())
+    }
+
+    fetchRecipes()
+  }, [])
+
   return (
     <div id="background-gradient">
       <h1>Detail page</h1>
 
       <div className="recipes-wrapper">
-        <div className="recipe-row">
-          <h3>Thanksgiving Turkey</h3>
-          <Button onClick={() => setSelectedRecipe(0)}>View Recipe</Button>
-        </div>
-        <div className="recipe-row">
-          <h3>Another awesome Turkey</h3>
-          <Button onClick={() => setSelectedRecipe(0)}>View Recipe</Button>
-        </div>
+        {recipes.map((recipe: any) => (
+          <div className="recipe-row">
+            <h3>{recipe.title}</h3>
+            <Button onClick={() => setSelectedRecipe(recipe)}>View Recipe</Button>
+          </div>
+        ))}
       </div>
       {selectedRecipe !== null && (
         <DetailCard
-          title="Thanksgiving Turkey"
-          ingredients={MOCK_INGREDIENTS}
-          instructions={MOCK_INSTRUCTIONS}
+          title={selectedRecipe.title}
+          ingredients={selectedRecipe.ingredients}
+          temp={selectedRecipe.temp}
+          time={selectedRecipe.time}
           setSelectedRecipe={setSelectedRecipe}
         />
       )}
