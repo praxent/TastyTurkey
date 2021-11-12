@@ -33,11 +33,14 @@ export const Detail = () => {
 
       <div className="recipes-wrapper">
         {recipes.map((recipe: Recipe) => (
-          <div className="recipe-row">
+          <div key={Math.random()} className="recipe-row">
             <h3>{recipe.title}</h3>
             <Button onClick={() => setSelectedRecipe(recipe)}>View Recipe</Button>
           </div>
         ))}
+        <Link to="/">
+          <Button>Back</Button>
+        </Link>
       </div>
       {selectedRecipe !== null && (
         <DetailCard
@@ -48,9 +51,6 @@ export const Detail = () => {
           setSelectedRecipe={setSelectedRecipe}
         />
       )}
-      <Link to="/">
-        <Button>Back</Button>
-      </Link>
     </div>
   )
 }

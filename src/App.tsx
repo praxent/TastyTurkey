@@ -19,8 +19,8 @@ function App() {
     <div className="App layout">
       <StyledAppBar />
       <div className="app-container">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
+        <header className="App-header text-center">
+          <img height="256" width="256" src={logo} className="App-logo" alt="logo" />
         </header>
 
         <Routes>
