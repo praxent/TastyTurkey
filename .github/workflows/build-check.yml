@@ -13,6 +13,6 @@ jobs:
       - name: Setup
         run: yarn install --frozen-lockfile
       - name: Lint
-        run: yarn run lint:ci
+        run: yarn run lint
       - name: Build React App
         run: yarn run build
