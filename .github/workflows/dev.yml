@@ -8,13 +8,14 @@ on:
       - dev
 jobs:
   build_react:
+    if: "! contains(toJSON(github.event.commits.*.message), '[skip-ci]')"
     runs-on: ubuntu-latest
     name: Build react
     steps:
       - uses: actions/checkout@v2
       - run : yarn install --frozen-lockfile
         shell: bash
-      - run : npm run build
+      - run : yarn run build
         shell: bash
       - run : git config user.name github-actions
         shell: bash
