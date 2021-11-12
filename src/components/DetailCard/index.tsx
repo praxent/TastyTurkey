@@ -1,3 +1,4 @@
+import { Button } from '@mui/material'
 import React from 'react'
 
 import logo from '../../styles/assets/logo_turkey.png'
@@ -7,9 +8,15 @@ interface Props {
   title: string
   ingredients: string[]
   instructions: string[]
+  setSelectedRecipe: React.Dispatch<React.SetStateAction<number | null>>
 }
 
-export const DetailCard: React.FC<Props> = ({ title, ingredients, instructions }) => {
+export const DetailCard: React.FC<Props> = ({
+  title,
+  ingredients,
+  instructions,
+  setSelectedRecipe,
+}) => {
   return (
     <div id="detail-card">
       <div className="detail-card-header">
@@ -31,6 +38,8 @@ export const DetailCard: React.FC<Props> = ({ title, ingredients, instructions }
           ))}
         </ol>
       </div>
+
+      <Button onClick={() => setSelectedRecipe(null)}>Close</Button>
     </div>
   )
 }
