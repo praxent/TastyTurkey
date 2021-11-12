@@ -1,5 +1,36 @@
 import React from 'react'
 
-export const DetailCard = () => {
-  return <h1>Detail Card</h1>
+import logo from '../../styles/assets/logo_turkey.png'
+import './styles.scss'
+
+interface Props {
+  title: string
+  ingredients: string[]
+  instructions: string[]
+}
+
+export const DetailCard: React.FC<Props> = ({ title, ingredients, instructions }) => {
+  return (
+    <div id="detail-card">
+      <div className="detail-card-header">
+        <h3>{title}</h3>
+        <img height={120} width={120} src={logo} alt="Turkey" />
+      </div>
+
+      <div className="detail-card-body">
+        <h3>Ingredients:</h3>
+        <ul>
+          {ingredients.map((ingredient) => (
+            <li key={Math.random()}>{ingredient}</li>
+          ))}
+        </ul>
+        <h3>Instructions</h3>
+        <ol>
+          {instructions.map((instruction) => (
+            <li key={Math.random()}>{instruction}</li>
+          ))}
+        </ol>
+      </div>
+    </div>
+  )
 }
