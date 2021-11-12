@@ -12,7 +12,7 @@ jobs:
     name: Build react
     steps:
       - uses: actions/checkout@v2
-      - run : npm ci
+      - run : yarn install --frozen-lockfile
         shell: bash
       - run : npm run build
         shell: bash
