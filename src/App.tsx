@@ -18,13 +18,16 @@ function App() {
   return (
     <div className="App layout">
       <StyledAppBar />
-      <Routes>
-        <Route path="/" element={<Dashboard />} />
-        <Route path="detail" element={<Detail />} />
-      </Routes>
-      <header className="App-header" />
       <div className="app-container">
-        <img src={logo} className="App-logo" alt="logo" />
+        <header className="App-header">
+          <img src={logo} className="App-logo" alt="logo" />
+        </header>
+
+        <Routes>
+          <Route path="/" element={<Dashboard />} />
+          <Route path="detail" element={<Detail />} />
+        </Routes>
+
         <Button onClick={handleOpen} text="Add Recipe" />
         <FormModal open={modalOpen} handleClose={() => setModalOpen(false)}>
           <Form />
