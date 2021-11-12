@@ -1,24 +1,26 @@
 import * as React from 'react';
 import Button from "@mui/material/Button";
 
-interface Props {
 
+type Props = {
   onClick: () => void;
+  text: string;
 }
 
-const Button: React.FC<Props> = ({ 
+const AddButton: React.FC<Props> = ({ 
 
-    onClick, 
-  
+    onClick, text
   }) => { 
+  
   return (
-    <button 
+   
+    <Button
       onClick={onClick}
-     
+      color="secondary"
     >
-    
-    </button>
+    {text}
+    </Button>
   );
 }
 
-export default Button;
+export default AddButton;
