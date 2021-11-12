@@ -4,13 +4,13 @@ import { FormControl, InputLabel, Input } from '@mui/material'
 import Button from '../Button'
 
 const Form: React.FC = () => {
-  const [name, setName] = useState('')
+  const [title, setTitle] = useState('')
   const [temp, setTemp] = useState('')
   const [time, setTime] = useState('')
   const [ingredients, setIngredients] = useState('')
 
-  const handleChangeName = (e: React.ChangeEvent<HTMLInputElement>): void => {
-    setName(e.target.value)
+  const handleChangeTitle = (e: React.ChangeEvent<HTMLInputElement>): void => {
+    setTitle(e.target.value)
   }
   const handleChangeTemp = (e: React.ChangeEvent<HTMLInputElement>): void => {
     setTemp(e.target.value)
@@ -22,6 +22,10 @@ const Form: React.FC = () => {
     setIngredients(e.target.value)
   }
 
+  const handleSubmit = (): void => {
+    console.log('submit')
+  }
+
   return (
     <>
       <div
@@ -30,12 +34,12 @@ const Form: React.FC = () => {
       >
         <h2>Add your recipe</h2>
         <FormControl style={{ marginTop: 20 }}>
-          <InputLabel htmlFor="name">Name</InputLabel>
+          <InputLabel htmlFor="title">Title</InputLabel>
           <Input
-            id="name"
+            id="title"
             type="text"
-            value={name}
-            onChange={handleChangeName}
+            value={title}
+            onChange={handleChangeTitle}
             style={{ width: '90%' }}
           />
         </FormControl>
@@ -72,7 +76,7 @@ const Form: React.FC = () => {
         </FormControl>
       </div>
       <div style={{ marginLeft: 50, marginTop: 30 }}>
-        <Button onClick={() => console.log('submit values to API')} text="Submit" />
+        <Button onClick={handleSubmit} text="Submit" />
       </div>
     </>
   )

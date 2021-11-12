@@ -16,7 +16,7 @@ function App() {
   const getRecipes = async () => {
     try {
       const response = await api({
-        path: 'recipes',
+        path: 'Recipes',
         method: 'GET',
       })
 
